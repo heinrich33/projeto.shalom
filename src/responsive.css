@@ -1,0 +1,295 @@
+/* ============================================================
+   PROJETO SHALOM — responsive.css
+   Media Queries Mobile-First: 320px → 1536px
+   ============================================================ */
+
+/* ── BASE: 320px (mobile pequeno) — já coberto pelo styles.css ── */
+
+/* ── 480px — mobile padrão ── */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--sp-4);
+  }
+  .section {
+    padding: var(--sp-16) 0;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+  .hero-sub {
+    font-size: var(--fs-base);
+  }
+  .hero-ctas {
+    flex-direction: column;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-trust {
+    gap: var(--sp-4);
+  }
+  .trust-divider {
+    display: none;
+  }
+
+  /* Impacto */
+  .impacto-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4);
+  }
+  .impacto-num {
+    font-size: var(--fs-3xl);
+  }
+
+  /* Valores doações */
+  .valores-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: var(--sp-8);
+  }
+
+  /* Form row */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 768px — tablet ── */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-drawer {
+    display: flex;
+  }
+
+  /* Hero */
+  #hero {
+    padding-top: 90px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  /* Sobre */
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Impacto */
+  .impacto-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Projetos */
+  .projetos-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* Carrossel */
+  .carousel-slide {
+    aspect-ratio: 4/3;
+  }
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  .carousel-caption {
+    padding: var(--sp-6) var(--sp-5) var(--sp-4);
+  }
+  .carousel-caption h3 {
+    font-size: var(--fs-base);
+  }
+
+  /* Como ajudar */
+  .ajudar-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* Depoimentos */
+  .depo-card {
+    padding: var(--sp-8) var(--sp-6);
+  }
+
+  /* Voluntário */
+  .voluntario-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Doações */
+  .doacoes-grid {
+    grid-template-columns: 1fr;
+  }
+  .valores-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ── 1024px — desktop pequeno ── */
+@media (max-width: 1024px) {
+  /* Projetos: 2 colunas no tablet landscape */
+  .projetos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Impacto */
+  .impacto-grid {
+    gap: var(--sp-4);
+  }
+  .impacto-card {
+    padding: var(--sp-6) var(--sp-4);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-8);
+  }
+}
+
+/* ── 1280px — desktop padrão ── */
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 var(--sp-8);
+  }
+  .projetos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sobre-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .impacto-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+}
+
+/* ── 1536px — desktop grande ── */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* ── ESPECÍFICOS POR SEÇÃO ── */
+
+/* Navbar: logo collapse em telas muito pequenas */
+@media (max-width: 380px) {
+  .nav-logo-text {
+    display: none;
+  }
+  .nav-logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Hero: ajuste de altura no mobile */
+@media (max-width: 768px) {
+  #hero {
+    min-height: 100svh;
+    padding-bottom: var(--sp-12);
+  }
+}
+
+/* Carrossel: altura menor no mobile */
+@media (max-width: 480px) {
+  .carousel-slide {
+    aspect-ratio: 1/1;
+  }
+}
+
+/* Sobre: timeline ajuste */
+@media (max-width: 768px) {
+  .timeline-section {
+    margin-top: var(--sp-12);
+  }
+}
+
+/* Formulário: 2 colunas quebra para 1 */
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Doações: 4 botões quebra para 2×2 no mobile */
+@media (max-width: 480px) {
+  .valores-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pix-key-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-copiar {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Footer: 2 colunas colapsa para 1 no mobile */
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Impacto: 2x2 no mobile pequeno */
+@media (max-width: 380px) {
+  .impacto-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Print */
+@media print {
+  #header,
+  footer,
+  .scroll-indicator,
+  .carousel-btn,
+  .depo-wrapper .carousel-btn,
+  .hamburger,
+  .btn-theme {
+    display: none;
+  }
+  #hero {
+    min-height: auto;
+  }
+  .section {
+    padding: 2rem 0;
+  }
+}

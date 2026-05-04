@@ -1,0 +1,267 @@
+/* ============================================================
+   PROJETO SHALOM — reset.css
+   Modern CSS Reset + Custom Properties Globais
+   Baseado em modern-normalize, adaptado para o projeto
+   ============================================================ */
+
+/* ── 1. BOX-SIZING UNIVERSAL ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 2. HTML & BODY BASE ── */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+body {
+  font-family:
+    "DM Sans",
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ── 3. TIPOGRAFIA ── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Outfit", "Syne", "DM Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin: 0 0 0.5em;
+}
+
+/* Hierarquia responsiva */
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+h4 {
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+}
+h5 {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+}
+h6 {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* ── 4. LISTAS ── */
+ul,
+ol {
+  list-style: none;
+}
+
+/* ── 5. IMAGENS E MÍDIA ── */
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+img {
+  height: auto;
+}
+
+/* ── 6. FORMULÁRIOS ── */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+textarea {
+  resize: vertical;
+}
+fieldset {
+  border: none;
+}
+
+/* ── 7. TABELAS ── */
+table {
+  border-collapse: collapse;
+}
+
+/* ── 8. FOCUS VISIBLE — acessibilidade ── */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── 9. SELEÇÃO DE TEXTO ── */
+::selection {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ── 10. SCROLLBAR CUSTOMIZADA ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* ============================================================
+   CUSTOM PROPERTIES — TEMA CLARO (padrão)
+   ============================================================ */
+:root {
+  /* Cores principais */
+  --color-primary: #1b6ca8;
+  --color-primary-rgb: 27, 108, 168;
+  --color-secondary: #f4a823;
+  --color-secondary-rgb: 244, 168, 35;
+  --color-accent: #e8f4fd;
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+
+  /* Superfícies */
+  --color-bg: #fafbff;
+  --color-surface: #ffffff;
+  --color-surface2: #f4f6fa;
+  --color-border: #e5e7eb;
+
+  /* Texto */
+  --color-text: #1a1a2e;
+  --color-muted: #6b7280;
+  --color-text-inv: #ffffff;
+
+  /* Tipografia fluida */
+  --fs-xs: clamp(0.75rem, 1.5vw, 0.875rem);
+  --fs-sm: clamp(0.875rem, 2vw, 1rem);
+  --fs-base: clamp(1rem, 2vw, 1.125rem);
+  --fs-lg: clamp(1.125rem, 2.5vw, 1.25rem);
+  --fs-xl: clamp(1.25rem, 3vw, 1.5rem);
+  --fs-2xl: clamp(1.5rem, 3.5vw, 2rem);
+  --fs-3xl: clamp(2rem, 4vw, 2.75rem);
+  --fs-4xl: clamp(2.5rem, 5vw, 3.5rem);
+  --fs-5xl: clamp(3rem, 6vw, 4.5rem);
+
+  /* Espaçamentos */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Sombras com cor */
+  --shadow-sm: 0 2px 8px rgba(27, 108, 168, 0.08);
+  --shadow-md: 0 8px 24px rgba(27, 108, 168, 0.12);
+  --shadow-lg: 0 16px 48px rgba(27, 108, 168, 0.16);
+  --shadow-xl: 0 24px 64px rgba(27, 108, 168, 0.2);
+  --shadow-amber: 0 8px 24px rgba(244, 168, 35, 0.3);
+
+  /* Transições */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s ease;
+  --transition-spring: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-index */
+  --z-below: -1;
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+/* ============================================================
+   TEMA ESCURO
+   ============================================================ */
+[data-theme="dark"] {
+  --color-primary: #4da6e8;
+  --color-primary-rgb: 77, 166, 232;
+  --color-secondary: #f4a823;
+  --color-accent: #1c2d3f;
+
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-surface2: #1c2430;
+  --color-border: #30363d;
+
+  --color-text: #e6edf3;
+  --color-muted: #8b949e;
+  --color-text-inv: #0d1117;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.6);
+}

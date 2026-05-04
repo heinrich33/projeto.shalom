@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Projeto Shalom — Abraçando Almas. Organização social que transforma vidas através do esporte, educação e solidariedade em Betim, MG. Faça parte desta história." />
+  <link rel="canonical" href="https://projetoshalom.org.br/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projeto Shalom — Abraçando Almas" />
+  <meta property="og:description"
+    content="15 anos transformando vidas através do futebol, educação e solidariedade. Conheça o Projeto Shalom e saiba como ajudar." />
+  <meta property="og:image" content="img/foto-04-grupo-grande.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://projetoshalom.org.br/" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projeto Shalom — Abraçando Almas" />
+  <meta name="twitter:description"
+    content="15 anos transformando vidas através do futebol, educação e solidariedade." />
+  <meta name="twitter:image" content="img/foto-04-grupo-grande.jpeg" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Projeto Shalom",
+    "alternateName": "Projeto Shalom — Transformando Vidas",
+    "url": "https://projetoshalom.org.br",
+    "description": "Organização social fundada em 2010 que transforma vidas de crianças, adolescentes e jovens através do futebol, educação socioemocional e ações de solidariedade.",
+    "foundingDate": "2010",
+    "areaServed": "Betim, Minas Gerais, Brasil",
+    "email": "cordenacao.projetoshalom@gmail.com",
+    "telephone": "+5531986718323",
+    "sameAs": ["https://www.instagram.com/projeto.shalom"],
+    "taxID": "20.533.668/0001-01"
+  }
+  </script>
+
+  <title>Projeto Shalom — Transformando Vidas</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./src/img/favicon.logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./src/reset.css" />
+  <link rel="stylesheet" href="./src/styles.css" />
+  <link rel="stylesheet" href="./src/responsive.css" />
+</head>
+
+<body>
+
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">Pular para o conteúdo principal</a>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ═══════════════════════════════════════════════════
+  HEADER
+  ═══════════════════════════════════════════════════ -->
+  <header id="header" role="banner">
+    <div class="container">
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#hero" class="nav-logo" aria-label="Projeto Shalom — Página inicial">
+          <img src="./src/img/nova.logo.png" alt="Logo Projeto Shalom" width="48" height="48" />
+          <div class="nav-logo-text">
+            <strong>Projeto Shalom</strong>
+            <span>Transformando Vidas</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#fotos">Galeria</a></li>
+          <li><a href="#como-ajudar">Como Ajudar</a></li>
+          <li><a href="#voluntario">Voluntário</a></li>
+          <li><a href="#doacoes">Doações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="btnTheme" class="btn-theme" aria-label="Alternar tema claro/escuro">
+
+            <!-- Ícone de sol -->
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+
+            <!-- Ícone de lua -->
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+
+          </button>
+
+          <!--  <a href="#doacoes" class="btn btn-secondary btn-sm">
+            <img src="./src/img/icon.doacao.svg" alt="" class="icon-doacao" aria-hidden="true" />
+            Doe Agora
+          </a> -->
+
+          <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+  <nav id="navDrawer" class="nav-drawer" aria-label="Menu mobile">
+    <a href="#sobre">Sobre o Projeto</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#fotos">Galeria de Fotos</a>
+    <a href="#como-ajudar">Como Ajudar</a>
+    <a href="#voluntario">Seja Voluntário</a>
+    <a href="#doacoes">Doações</a>
+    <a href="#contato">Contato</a>
+    <a href="#doacoes" class="btn btn-secondary">Doe Agora</a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════
+  MAIN
+  ═══════════════════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ─── 1. HERO ─── -->
+    <section id="hero" aria-label="Apresentação do Projeto Shalom">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="./src/img/foto.time.01.jpeg" alt="" class="hero-bg-image" fetchpriority="high" />
+        <div class="hero-bg-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-year">Desde 2010</span>
+            <span class="hero-eyebrow-divider" aria-hidden="true"></span>
+            <span class="hero-eyebrow-text">Servindo com propósito</span>
+          </div>
+          <h1 class="hero-title">
+            Transformando Vidas<br />Através da <em>Solidariedade</em>
+          </h1>
+          <p class="hero-sub">
+            O Projeto Shalom surge com uma missão simples, porém poderosa: alcançar crianças, jovens e adultos por meio
+            do esporte e da educação, promovendo transformação social com amor, propósito e cuidado ao próximo.
+          </p>
+          <div class="hero-ctas">
+
+            <a href="#voluntario" class="btn btn-outline-white btn-lg">
+              <svg class="icon-aperto-de-mao" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path
+                  d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 7.65l.77.78L12 21l7.65-7.65.77-.78a5.4 5.4 0 0 0 0-7.99z">
+                </path>
+              </svg>
+              Seja Voluntário
+            </a>
+
+            <a href="#doacoes" class="btn btn-secondary btn-lg">
+              <svg class="icon-doacao" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <path d="M20 12V22H4V12"></path>
+                <path d="M22 7H2v5h20V7z"></path>
+                <path d="M12 22V7"></path>
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+              </svg>
+              Fazer Doação
+            </a>
+
+          </div>
+          <div class="hero-trust" role="list">
+            <div class="trust-item" role="listitem">
+              <span class="trust-num">15+</span>
+              <span class="trust-label">Anos de atuação</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item" role="listitem">
+              <span class="trust-num">500+</span>
+              <span class="trust-label">Famílias impactadas</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item" role="listitem">
+              <span class="trust-num">1.275</span>
+              <span class="trust-label">No Jantar de Natal 2025</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item" role="listitem">
+              <span class="trust-num">100%</span>
+              <span class="trust-label">Dedicação social</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span style="font-size:0.65rem;letter-spacing:.12em;text-transform:uppercase;">Role para baixo</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ─── 2. SOBRE ─── -->
+    <section id="sobre" class="section" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">Sobre o Projeto</span>
+          <h2 class="section-title" id="sobre-titulo">Uma história de amor e transformação</h2>
+          <p class="section-sub">
+            Fundado em 2010, o Projeto Shalom acredita que toda criança merece uma oportunidade de
+            crescer com dignidade, alegria e pertencimento.
+          </p>
+        </div>
+
+        <div class="sobre-grid" role="list">
+          <article class="sobre-card reveal" role="listitem">
+            <h3>Nossa Missão</h3>
+            <p>Desenvolver atividades que promovam a melhoria da qualidade de vida dos atendidos, incentivando o
+              esporte, a cultura, o lazer e o desenvolvimento social.
+              Atuar na promoção da inclusão e na redução das desigualdades sociais.
+            </p>
+          </article>
+          <article class="sobre-card reveal" role="listitem">
+            <h3>Nossa Visão</h3>
+            <p>Ser reconhecido nacionalmente como um projeto de referência em transformação social, promovendo o
+              desenvolvimento humano e contribuindo ativamente para a construção de uma sociedade mais justa e
+              inclusiva.</p>
+          </article>
+          <article class="sobre-card reveal" role="listitem">
+            <h3>Nossos Valores</h3>
+            <p>Honestidade, transparência, união, respeito à diversidade social, valorização do ser humano e
+              fortalecimento dos vínculos familiares. Princípios que orientam nossas ações e refletem nosso compromisso
+              com o cuidado ao próximo e a transformação social.</p>
+          </article>
+        </div>
+
+        <div class="timeline-section reveal" style="margin-top:4rem;">
+          <h3 style="font-size:var(--fs-2xl);margin-bottom:2rem;text-align:center;">Nossa Trajetória</h3>
+          <div class="timeline" role="list">
+            <div class="timeline-item" role="listitem">
+              <div class="timeline-year">2010</div>
+              <h4>O começo de tudo</h4>
+              <p>O Projeto Shalom nasce com o objetivo de desenvolver atividades que tirem crianças das ruas da
+                ociosidade, usando o futebol como principal ferramenta de transformação social.</p>
+            </div>
+            <div class="timeline-item" role="listitem">
+              <div class="timeline-year">2011</div>
+              <h4>Ação com a população de rua</h4>
+              <p>Início do trabalho sistemático com a população em situação de rua: distribuição de alimentos, escuta
+                ativa e encaminhamentos com dignidade.</p>
+            </div>
+            <div class="timeline-item" role="listitem">
+              <div class="timeline-year">2011</div>
+              <h4>Jantar de Natal: 1.275 pessoas</h4>
+              <p>Realização do maior Jantar de Natal do projeto, atendendo 1.275 pessoas em situação de vulnerabilidade
+                social no dia 25 de dezembro.</p>
+            </div>
+            <div class="timeline-item" role="listitem">
+              <div class="timeline-year">2015</div>
+              <h4>Crescimento e novos programas</h4>
+              <p>Expansão das atividades com inclusão de aulas de reforço escolar e as primeiras rodas de conversa para
+                mulheres e meninas da comunidade.</p>
+            </div>
+            <div class="timeline-item" role="listitem">
+              <div class="timeline-year">2023</div>
+              <h4>Programa de desenvolvimento socioemocional</h4>
+              <p>Lançamento do curso de desenvolvimento socioemocional, formando jovens protagonistas com habilidades de
+                liderança, autoconhecimento e empatia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 3. IMPACTO ─── -->
+    <section id="impacto" class="section" aria-labelledby="impacto-titulo">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">Nosso Impacto</span>
+          <h2 class="section-title" id="impacto-titulo">Números que contam histórias reais</h2>
+          <p class="section-sub">Cada número representa uma vida transformada, uma família acolhida, uma criança que
+            encontrou no Shalom muito mais do que um projeto.</p>
+        </div>
+        <div class="impacto-grid" role="list">
+          <article class="impacto-card reveal" role="listitem">
+
+            <div class="impacto-num" data-counter data-target="500" data-suffix="+" aria-label="Mais de 500 famílias">0
+            </div>
+            <div class="impacto-label">Famílias Atendidas</div>
+          </article>
+          <article class="impacto-card reveal" role="listitem">
+
+            <div class="impacto-num" data-counter data-target="1275" data-suffix=""
+              aria-label="1.275 pessoas no jantar">0</div>
+            <div class="impacto-label">Pessoas no Jantar de Natal 2025</div>
+          </article>
+          <article class="impacto-card reveal" role="listitem">
+
+            <div class="impacto-num" data-counter data-target="80" data-suffix="+" aria-label="Mais de 80 voluntários">0
+            </div>
+            <div class="impacto-label">Voluntários Envolvidos</div>
+          </article>
+          <article class="impacto-card reveal" role="listitem">
+
+            <div class="impacto-num" data-counter data-target="15" data-suffix="+" aria-label="Mais de 15 anos">0</div>
+            <div class="impacto-label">Anos de Atuação</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 4. PROJETOS ─── -->
+    <section id="projetos" class="section" aria-labelledby="projetos-titulo">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">O que fazemos</span>
+          <h2 class="section-title" id="projetos-titulo">Atividades que transformam</h2>
+          <p class="section-sub">Cada iniciativa foi pensada para atender uma necessidade real da comunidade — do campo
+            de futebol à sala de aula, da cesta básica ao abraço de natal.</p>
+        </div>
+        <div class="projetos-grid">
+
+          <article class="projeto-card reveal">
+            <div class="projeto-card-img">
+              <img src="./src/img/foto.time.02.jpeg" alt="Time do Shalom E.C. posando com uniformes oficiais"
+                loading="lazy" width="400" height="300" />
+              <span class="projeto-badge">Esporte</span>
+            </div>
+            <div class="projeto-card-body">
+              <h3>Futebol Social</h3>
+              <p>Treinos regulares, torneios e a experiência de jogar em equipe como escola de vida. O futebol é nossa
+                principal ferramenta para desenvolver disciplina, respeito e pertencimento.</p>
+              <div class="projeto-impacto">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+                Centenas de jovens participantes
+              </div>
+              <a href="#fotos" class="btn btn-outline btn-sm">Ver fotos</a>
+            </div>
+          </article>
+
+          <article class="projeto-card reveal">
+            <div class="projeto-card-img">
+              <img src="./src/img/eu.lidero.prog.desen.socioemocional.jpeg"
+                alt="Jovens com livros do programa Eu Líder sorrindo" loading="lazy" width="400" height="300" />
+              <span class="projeto-badge">Educação</span>
+            </div>
+            <div class="projeto-card-body">
+              <h3>Programa de Desenvolvimento Socioemocional</h3>
+              <p>Curso de desenvolvimento socioemocional que forma jovens protagonistas. Trabalhamos autoconhecimento,
+                liderança, caráter e habilidades relacionais em módulos dinâmicos.</p>
+              <div class="projeto-impacto">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+                Múltiplas turmas formadas
+              </div>
+              <a href="#fotos" class="btn btn-outline btn-sm">Ver fotos</a>
+            </div>
+          </article>
+
+          <article class="projeto-card reveal">
+            <div class="projeto-card-img">
+              <img src="./src/img/foto.mulheres.01.jpeg" alt="Grupo de mulheres reunidas em evento do Projeto Shalom"
+                loading="lazy" width="400" height="300" />
+              <span class="projeto-badge">Comunidade</span>
+            </div>
+            <div class="projeto-card-body">
+              <h3>Rodas de Conversa</h3>
+              <p>Espaços seguros de acolhimento e diálogo para mulheres, meninas e público aberto. Abordamos saúde
+                mental, autoestima, direitos e bem-estar em encontros regulares.</p>
+              <div class="projeto-impacto">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+                Mulheres e famílias fortalecidas
+              </div>
+              <a href="#voluntario" class="btn btn-outline btn-sm">Participar</a>
+            </div>
+          </article>
+
+          <article class="projeto-card reveal">
+            <div class="projeto-card-img">
+              <img src="./src/img/foto.valuntarios.01.jpeg" alt="Voluntários preparando alimentos para ação social"
+                loading="lazy" width="400" height="300" />
+              <span class="projeto-badge">Solidariedade</span>
+            </div>
+            <div class="projeto-card-body">
+              <h3>Jantar de Natal</h3>
+              <p>Todo dia 25 de dezembro, o Shalom abre seus braços para pessoas em situação de vulnerabilidade. Em
+                2025, 1.275 pessoas foram acolhidas com um jantar especial e muito amor.</p>
+              <div class="projeto-impacto">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+                1.275 pessoas atendidas em 2025
+              </div>
+              <a href="#doacoes" class="btn btn-outline btn-sm">Apoiar</a>
+            </div>
+          </article>
+
+          <article class="projeto-card reveal">
+            <div class="projeto-card-img">
+              <img src="./src/img/foto.voluntarios.02.jpeg" alt="Voluntário com colete verde realizando ação social"
+                loading="lazy" width="400" height="300" />
+              <span class="projeto-badge">Inclusão</span>
+            </div>
+            <div class="projeto-card-body">
+              <h3>Ação com População de Rua</h3>
+              <p>Atuação direta com a população em situação de rua: distribuição de alimentos, escuta ativa e
+                encaminhamentos. Porque todo ser humano merece dignidade e cuidado.</p>
+              <div class="projeto-impacto">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+                Atendimento regular na cidade
+              </div>
+              <a href="#como-ajudar" class="btn btn-outline btn-sm">Como ajudar</a>
+            </div>
+          </article>
+
+          <article class="projeto-card reveal">
+            <div class="projeto-card-img">
+              <img src="./src/img/atendimento.familia.cesta.jpeg" alt="Jovens líderes segurando livros Líderes em Ação"
+                loading="lazy" width="400" height="300" />
+              <span class="projeto-badge">Família</span>
+            </div>
+            <div class="projeto-card-body">
+              <h3>Apoio às Famílias</h3>
+              <p>Acompanhamento de famílias em situação de vulnerabilidade com distribuição de cestas básicas,
+                orientações e rede de apoio comunitário para garantir o básico com dignidade.</p>
+              <div class="projeto-impacto">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+                Famílias apoiadas regularmente
+              </div>
+              <a href="#doacoes" class="btn btn-outline btn-sm">Contribuir</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 5. CARROSSEL DE FOTOS ─── -->
+    <section id="fotos" class="section" aria-labelledby="fotos-titulo">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">Galeria</span>
+          <h2 class="section-title" id="fotos-titulo">O Projeto Em Imagens</h2>
+          <p class="section-sub">Cada registro é um capítulo desta história de transformação e amor.</p>
+        </div>
+        <div class="carousel-outer reveal">
+          <div class="carousel-wrapper" id="mainCarousel" role="region" aria-label="Galeria de fotos">
+            <div class="carousel-track" aria-live="polite">
+              <div class="carousel-slide" role="group" aria-label="Foto 1 de 7">
+                <img src="./src/img/foto.time.01.jpeg" alt="Time completo do Shalom E.C. com uniformes oficiais"
+                  loading="lazy" width="1200" height="525" />
+                <div class="carousel-caption">
+                  <h3>Shalom E.C. — Orgulho da Comunidade</h3>
+                  <p>O time que vai além do futebol: disciplina, caráter e amizade em campo.</p>
+                </div>
+              </div>
+              <div class="carousel-slide" role="group" aria-label="Foto 2 de 7">
+                <img src="./src/img/foto.time.02.jpeg" alt="Grupo grande de crianças e adolescentes reunidos no campo"
+                  loading="lazy" width="1200" height="525" />
+                <div class="carousel-caption">
+                  <h3>Unidos pelo Esporte</h3>
+                  <p>Mais de 40 jovens reunidos — cada sorriso é o resultado de 15 anos de dedicação.</p>
+                </div>
+              </div>
+              <div class="carousel-slide" role="group" aria-label="Foto 3 de 7">
+                <img src="./src/img/foto.time.05.jpeg" alt="Treinador conversando com jovens jogadores" loading="lazy"
+                  width="1200" height="525" />
+                <div class="carousel-caption">
+                  <h3>Formação Além do Campo</h3>
+                  <p>As reuniões técnicas ensinam não só futebol, mas valores e responsabilidade para a vida.</p>
+                </div>
+              </div>
+              <div class="carousel-slide" role="group" aria-label="Foto 4 de 7">
+                <img src="./src/img/eu.lidero.prog.desen.socioemocional.meninas.jpeg"
+                  alt="Jovens com livros do programa Eu Líder sorrindo" loading="lazy" width="1200" height="525" />
+                <div class="carousel-caption">
+                  <h3>Programa de Desenvolvimento Socioemocional</h3>
+                  <p>Formando líderes que vão transformar suas famílias, escolas e comunidades.</p>
+                </div>
+              </div>
+              <div class="carousel-slide" role="group" aria-label="Foto 5 de 7">
+                <img src="./src/img/foto.mulheres.01.jpeg"
+                  alt="Reunião de mulheres em evento comunitário do Projeto Shalom" loading="lazy" width="1200"
+                  height="525" />
+                <div class="carousel-caption">
+                  <h3>Fortalecendo Mulheres</h3>
+                  <p>Rodas de conversa que acolhem, empoderam e fortalecem mães e mulheres da comunidade.</p>
+                </div>
+              </div>
+              <div class="carousel-slide" role="group" aria-label="Foto 6 de 7">
+                <img src="./src/img/foto.valuntarios.01.jpeg" alt="Voluntários com aventais preparando alimentos"
+                  loading="lazy" width="1200" height="525" />
+                <div class="carousel-caption">
+                  <h3>Voluntários em Ação</h3>
+                  <p>Cada voluntário é um anjo. Juntos, preparamos o Jantar de Natal que abraça 1.275 almas.</p>
+                </div>
+              </div>
+              <div class="carousel-slide" role="group" aria-label="Foto 7 de 7">
+                <img src="./src/img/lider.em.acao.jpeg" alt="Jovens líderes com livros Líderes em Ação" loading="lazy"
+                  width="1200" height="525" />
+                <div class="carousel-caption">
+                  <h3>Líderes em Ação</h3>
+                  <p>O programa de liderança forma jovens que serão protagonistas do próprio futuro.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Foto anterior">&#8249;</button>
+            <button class="carousel-btn next" aria-label="Próxima foto">&#8250;</button>
+          </div>
+          <div class="carousel-dots" role="list" aria-label="Indicadores"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 6. COMO AJUDAR ─── -->
+    <section id="como-ajudar" class="section" aria-labelledby="ajudar-titulo">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">Como Ajudar</span>
+          <h2 class="section-title" id="ajudar-titulo">Há um jeito para cada coração</h2>
+          <p class="section-sub">Não existe contribuição pequena quando o propósito é grande. Escolha como quer fazer
+            parte desta história.</p>
+        </div>
+        <div class="ajudar-grid">
+          <article class="ajudar-card destaque reveal">
+
+            <h3>Faça uma Doação</h3>
+            <p>Sua doação financia treinos, materiais esportivos, reforço escolar, cestas básicas, Jantar de Natal,
+              entre outros custos que temos.
+              Qualquer valor faz diferença real na vida de uma criança.</p>
+            <a href="#doacoes" class="btn btn-secondary">Quero Doar</a>
+          </article>
+          <article class="ajudar-card reveal">
+
+            <h3>Seja Voluntário</h3>
+            <p>Dedique seu tempo e talento. Treinadores, educadores, cozinheiros, fotógrafos, profissionais de saúde —
+              toda habilidade é bem-vinda no Projeto Shalom.</p>
+            <a href="#voluntario" class="btn btn-outline">Cadastrar-me</a>
+          </article>
+          <article class="ajudar-card reveal">
+
+            <h3>Parcerias</h3>
+            <p>Empresas que apoiam o Projeto Shalom ganham visibilidade, propósito social e a certeza de que seus
+              recursos estão gerando impacto real e mensurável na comunidade.</p>
+            <a href="https://wa.me/5531986718323" target="_blank" rel="noopener noreferrer"
+              class="btn btn-outline">Falar conosco</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── 7. VOLUNTARIADO ─── -->
+    <section id="voluntario" class="section" aria-labelledby="vol-titulo">
+      <div class="container">
+        <div class="voluntario-grid">
+          <div class="voluntario-info reveal-left">
+            <span class="section-label">Voluntariado</span>
+            <h2 id="vol-titulo">Seu tempo pode mudar uma vida</h2>
+            <p>O Projeto Shalom é movido pelo amor de pessoas que acreditam que é possível fazer o bem. Se você tem um
+              talento para compartilhar, venha fazer parte desta família.</p>
+            <div class="voluntario-benefits" role="list">
+              <div class="benefit-item" role="listitem">
+                <!-- Treinadores e Monitores -->
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M6 20v-2a6 6 0 0 1 12 0v2"></path>
+                  </svg>
+                </div>
+                <div><strong>Treinadores e Monitores</strong>
+                  <p>Ajude a conduzir treinos e atividades esportivas com as crianças e adolescentes.</p>
+                </div>
+              </div>
+              <div class="benefit-item" role="listitem">
+                <!-- Educadores e Professores -->
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                </div>
+                <div><strong>Educadores e Professores</strong>
+                  <p>Apoio no reforço escolar e nos programas de formação socioemocional.</p>
+                </div>
+              </div>
+              <div class="benefit-item" role="listitem">
+                <!-- Cozinheiros e Auxiliares -->
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                    <line x1="6" y1="1" x2="6" y2="4"></line>
+                    <line x1="10" y1="1" x2="10" y2="4"></line>
+                    <line x1="14" y1="1" x2="14" y2="4"></line>
+                  </svg>
+                </div>
+                <div><strong>Cozinheiros e Auxiliares</strong>
+                  <p>Essenciais nas ações sociais e no Jantar de Natal de 25 de dezembro.</p>
+                </div>
+              </div>
+              <div class="benefit-item" role="listitem">
+                <!-- Comunicação e Design -->
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <div><strong>Comunicação e Design</strong>
+                  <p>Fotógrafos, designers e criadores de conteúdo para ampliar nossa voz.</p>
+                </div>
+              </div>
+              <div class="benefit-item" role="listitem">
+                <!-- Outras Habilidades -->
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+                  </svg>
+                </div>
+                <div><strong>Outras Habilidades</strong>
+                  <p>Advogados, psicólogos, médicos, contadores — todo talento tem espaço aqui.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-right">
+            <div class="form-card">
+              <form id="formVoluntario" novalidate aria-labelledby="vol-titulo">
+                <div id="formSuccess" class="form-success" role="alert" aria-live="assertive">
+                  <div class="form-success-icon" aria-hidden="true">🎉</div>
+                  <h3>Recebemos seu cadastro!</h3>
+                  <p>Angélica ou Carlos Eduardo entrarão em contato em breve. Seja bem-vindo(a) à família Shalom!</p>
+                  <a href="#fotos" class="btn btn-primary" style="margin-top:1rem;">Ver galeria de fotos</a>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="volNome">Nome completo *</label>
+                    <input type="text" id="volNome" name="nome" class="form-control" data-validate="required"
+                      placeholder="Seu nome completo" autocomplete="name" required />
+                    <span class="form-feedback" aria-live="polite"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="volTelefone">Telefone / WhatsApp *</label>
+                    <input type="tel" id="volTelefone" name="telefone" class="form-control" data-validate="phone"
+                      placeholder="(31) 9xxxx-xxxx" autocomplete="tel" required />
+                    <span class="form-feedback" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="volEmail">E-mail *</label>
+                  <input type="email" id="volEmail" name="email" class="form-control" data-validate="email"
+                    placeholder="seu@email.com" autocomplete="email" required />
+                  <span class="form-feedback" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="volArea">Área de interesse *</label>
+                  <select id="volArea" name="area" class="form-control" data-validate="required" required>
+                    <option value="">Selecione uma área...</option>
+                    <option value="esporte">Esporte e Futebol</option>
+                    <option value="educacao">Educação e Reforço Escolar</option>
+                    <option value="socioemocional">Desenvolvimento Socioemocional</option>
+                    <option value="culinaria">Culinária e Ações Sociais</option>
+                    <option value="comunicacao">Comunicação, Foto e Design</option>
+                    <option value="saude">Saúde (Médico, Psicólogo, etc.)</option>
+                    <option value="juridico">Jurídico e Administrativo</option>
+                    <option value="outros">Outros / Geral</option>
+                  </select>
+                  <span class="form-feedback" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="volMensagem">Mensagem (opcional)</label>
+                  <textarea id="volMensagem" name="mensagem" class="form-control"
+                    placeholder="Conte um pouco sobre você e como quer contribuir..." rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-secondary" style="width:100%">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                  </svg>
+                  Quero Ser Voluntário
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 8. DOAÇÕES ─── -->
+    <section id="doacoes" class="section" aria-labelledby="doe-titulo">
+      <div class="container">
+        <div class="doacoes-grid">
+          <div class="doacoes-info reveal-left">
+            <span class="section-label">Faça a Diferença</span>
+            <h2 class="section-title" id="doe-titulo" style="color:#fff;">
+              Cada real doado é uma criança com oportunidade
+            </h2>
+            <p>Sua generosidade transforma realidades: com sua doação, mantemos nossos treinos de futebol, fornecemos
+              materiais esportivos e garantimos reforço escolar. Além disso, você nos ajuda a levar esperança e
+              dignidade ao nosso Jantar de Natal, alcançando cada vez mais famílias em situação de vulnerabilidade.</p>
+            <p>O Projeto Shalom é uma organização transparente com CNPJ ativo. Cada recurso é utilizado diretamente nas
+              atividades sociais.</p>
+
+            <div class="selos" role="list">
+              <div class="selo" role="listitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>CNPJ Verificado</span>
+              </div>
+              <div class="selo" role="listitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Organização Transparente</span>
+              </div>
+              <div class="selo" role="listitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Ativa desde 2010</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-right">
+            <div class="banco-card">
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+                Dados para Transferência
+              </h4>
+              <div class="banco-info" role="list">
+                <div class="banco-row" role="listitem"><span>Banco</span><span>403 — Cora SCFI</span></div>
+                <div class="banco-row" role="listitem"><span>Agência</span><span>0001</span></div>
+                <div class="banco-row" role="listitem"><span>Conta</span><span>2251384-3</span></div>
+                <div class="banco-row" role="listitem"><span>Favorecido</span><span>PROJETO SHALOM</span></div>
+                <div class="banco-row" role="listitem"><span>CNPJ</span><span>20.533.668/0001-01</span></div>
+              </div>
+              <div class="pix-area">
+                <div class="pix-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true"
+                    style="display:inline-block; vertical-align:middle; margin-right:5px; color: var(--color-secondary);">
+                    <path
+                      d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4">
+                    </path>
+                  </svg>
+                  Chave PIX (CNPJ)
+                </div>
+                <div class="pix-key-wrap">
+                  <span class="pix-key" id="pixKey">20.533.668/0001-01</span>
+                  <button id="btnCopiarPix" class="btn-copiar" aria-label="Copiar chave PIX">Copiar</button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="margin-top:1.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-md);padding:1.25rem;">
+              <p
+                style="font-size:var(--fs-xs);color:rgba(255,255,255,0.5);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.08em;">
+                Dúvidas? Fale conosco</p>
+              <a href="https://wa.me/5531986828323" target="_blank" rel="noopener noreferrer"
+                class="btn btn-outline-white btn-sm" style="width:100%;justify-content:center;margin-bottom:.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                  </path>
+                </svg>
+                Angélica: (31) 98671-8323
+              </a>
+
+              <a href="https://wa.me/5531987831790" target="_blank" rel="noopener noreferrer"
+                class="btn btn-outline-white btn-sm" style="width:100%;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                  </path>
+                </svg>
+                Carlos Eduardo: (31) 98783-1790
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════
+      FOOTER
+  ═══════════════════════════════════════════════════ -->
+  <footer id="contato" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-brand-logo">
+            <img src="./src/img/nova.logo.png" alt="Logo Projeto Shalom" width="44" height="44" loading="lazy" />
+            <strong>Projeto Shalom</strong>
+          </div>
+          <p class="footer-tagline">Transformando Vidas desde 2010. Através do esporte, educação e
+            solidariedade em Betim, Minas Gerais.</p>
+          <div class="footer-socials" role="list">
+            <a href="https://www.instagram.com/projeto.shalom" target="_blank" rel="noopener noreferrer"
+              class="social-link" role="listitem" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://wa.me/5531986718323" target="_blank" rel="noopener noreferrer" class="social-link"
+              role="listitem" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+            </a>
+            <a href="mailto:cordenacao.projetoshalom@gmail.com" class="social-link" role="listitem" aria-label="E-mail">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <nav class="footer-links">
+            <a href="#sobre">Sobre o Projeto</a>
+            <a href="#projetos">Nossas Atividades</a>
+            <a href="#fotos">Galeria de Fotos</a>
+            <a href="#como-ajudar">Como Ajudar</a>
+            <a href="#voluntario">Seja Voluntário</a>
+            <a href="#doacoes">Faça uma Doação</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <div class="footer-contact-items">
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true"></span>
+              <div>
+                <a href="https://wa.me/5531986718323" style="color:rgba(255,255,255,0.6);">Angélica: (31)
+                  98671-8323</a><br />
+                <a href="https://wa.me/5531987831790" style="color:rgba(255,255,255,0.6);">Carlos: (31) 98783-1790</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true"></span>
+              <a href="mailto:cordenacao.projetoshalom@gmail.com"
+                style="color:rgba(255,255,255,0.6);word-break:break-all;font-size:var(--fs-xs);">cordenacao.projetoshalom<br />@gmail.com</a>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true"></span>
+              <a href="https://www.instagram.com/projeto.shalom" target="_blank" rel="noopener noreferrer"
+                style="color:rgba(255,255,255,0.6);">@projeto.shalom</a>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true"></span>
+              <span style="color:rgba(255,255,255,0.4);font-size:var(--fs-xs);">CNPJ: 20.533.668/0001-01</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Projeto Shalom — Transformando Vidas. Todos os direitos reservados.</p>
+        <nav class="footer-legal">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+          <a href="mailto:cordenacao.projetoshalom@gmail.com">Transparência</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./src/main.js"></script>
+</body>
+
+</html>
