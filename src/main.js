@@ -600,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
 *Área de interesse:* ${area}
 ${mensagem ? `*Mensagem:* ${mensagem}` : ""}`;
 
-          const url = `https://wa.me/5531986828323?text=${encodeURIComponent(texto)}`;
+          const url = `https://wa.me/5531986718323?text=${encodeURIComponent(texto)}`;
           window.open(url, "_blank");
 
           form.style.display = "none";
