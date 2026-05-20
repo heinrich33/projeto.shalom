@@ -16,7 +16,6 @@
    9. Utilitários: Logo collapse, Nav Drawer, Preferências, Print
    ============================================================ */
 
-
 /* ══════════════════════════════════════════════════════════════
    1. PROTEÇÃO GLOBAL — evita overflow em qualquer tela
 ══════════════════════════════════════════════════════════════ */
@@ -28,13 +27,11 @@ canvas {
   max-width: 100%;
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    2. MOBILE L — max-width: 480px
    Smartphones (iPhone SE até Galaxy S23)
 ══════════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
-
   /* ── Container ── */
   .container {
     padding: 0 var(--sp-4);
@@ -203,44 +200,44 @@ canvas {
      CARROSSEL — Correção Crítica
      Substitui height fixo por aspect-ratio fluido
   ───────────────────────────────────── */
+  /* ─── CARROSSEL mobile ─── */
   .carousel-wrapper {
     max-width: 100%;
     border-radius: var(--radius-md);
   }
-
-  /* Proporção 4:3 — ideal para fotos de pessoas em portrait */
   .carousel-slide {
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
+    max-height: 55vh;
   }
   .carousel-slide img {
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
   }
-
-  /* Setas: área de toque mínima 44×44px (WCAG 2.5.5) */
   .carousel-btn {
     width: 44px;
     height: 44px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
-  .carousel-btn.prev { left: var(--sp-2); }
-  .carousel-btn.next { right: var(--sp-2); }
-
-  /* Caption compacta */
+  .carousel-btn.prev {
+    left: var(--sp-2);
+  }
+  .carousel-btn.next {
+    right: var(--sp-2);
+  }
   .carousel-caption {
-    padding: var(--sp-8) var(--sp-4) var(--sp-4);
+    padding: var(--sp-6) var(--sp-4) var(--sp-3);
   }
   .carousel-caption h3 {
     font-size: var(--fs-sm);
     margin-bottom: var(--sp-1);
   }
   .carousel-caption p {
-    font-size: 0.7rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: none;
+  }
+  .carousel-dots {
+    gap: var(--sp-1);
+    margin-top: var(--sp-4);
   }
 
   /* Dots: área de toque expandida via padding sem mudar visual */
@@ -257,7 +254,7 @@ canvas {
     position: relative;
   }
   .dot::after {
-    content: '';
+    content: "";
     display: block;
     width: 10px;
     height: 10px;
@@ -279,15 +276,30 @@ canvas {
   /* ─────────────────────────────────────
      COMO AJUDAR
   ───────────────────────────────────── */
+  /* ─── COMO AJUDAR mobile ─── */
   .ajudar-grid {
     grid-template-columns: 1fr;
     gap: var(--sp-4);
+    padding: 0;
   }
   .ajudar-card {
-    padding: var(--sp-7) var(--sp-6);
+    padding: var(--sp-6) var(--sp-5);
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   .ajudar-card h3 {
     font-size: var(--fs-lg);
+    margin-bottom: var(--sp-3);
+  }
+  .ajudar-card p {
+    font-size: var(--fs-sm);
+    margin-bottom: var(--sp-5);
+  }
+  .ajudar-card .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
   }
 
   /* ─────────────────────────────────────
@@ -421,7 +433,6 @@ canvas {
   }
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    3. FORMULÁRIO — max-width: 600px
    Breakpoint intermediário exclusivo para form-row
@@ -433,13 +444,11 @@ canvas {
   }
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    4. TABLET — max-width: 768px
    Tablets pequenos, landscape de smartphones grandes
 ══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-
   /* ── Container ── */
   .container {
     padding: 0 var(--sp-5);
@@ -456,9 +465,15 @@ canvas {
   /* ─────────────────────────────────────
      NAVBAR — Oculta links, revela hambúrguer
   ───────────────────────────────────── */
-  .nav-links  { display: none; }
-  .hamburger  { display: flex; }
-  .nav-drawer { display: flex; }
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-drawer {
+    display: flex;
+  }
 
   /* ─────────────────────────────────────
      HERO
@@ -515,6 +530,7 @@ canvas {
      CARROSSEL — Tablet
      16:9 aproveita bem a largura do tablet
   ───────────────────────────────────── */
+  /* ─── CARROSSEL tablet ─── */
   .carousel-wrapper {
     max-width: 100%;
     border-radius: var(--radius-md);
@@ -522,6 +538,11 @@ canvas {
   .carousel-slide {
     height: auto;
     aspect-ratio: 16 / 9;
+    max-height: 50vh;
+  }
+  .carousel-slide img {
+    object-fit: cover;
+    object-position: center center;
   }
   .carousel-btn {
     width: 44px;
@@ -529,7 +550,7 @@ canvas {
     font-size: 1.2rem;
   }
   .carousel-caption {
-    padding: var(--sp-8) var(--sp-5) var(--sp-4);
+    padding: var(--sp-6) var(--sp-5) var(--sp-4);
   }
   .carousel-caption h3 {
     font-size: var(--fs-base);
@@ -588,20 +609,18 @@ canvas {
   }
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    5. DESKTOP M — max-width: 1024px
    Tablets landscape, laptops pequenos
 ══════════════════════════════════════════════════════════════ */
-@media (max-width: 1024px) {
-
-  /* ── Projetos: 2 colunas fluidas ── */
+/* ── DESKTOP M — max-width: 1024px ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Projetos: 2 colunas SOMENTE entre tablet e desktop */
   .projetos-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: none;
   }
 
-  /* ── Impacto: gap reduzido ── */
   .impacto-grid {
     gap: var(--sp-4);
   }
@@ -609,26 +628,22 @@ canvas {
     padding: var(--sp-6) var(--sp-4);
   }
 
-  /* ── Carousel mantém 16:9 ── */
   .carousel-slide {
     height: auto;
     aspect-ratio: 16 / 9;
   }
 
-  /* ── Footer: wrap ── */
   .footer-grid {
     flex-wrap: wrap;
     gap: var(--sp-8);
   }
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    6. DESKTOP L — min-width: 1280px
    Desktops padrão — restaura layouts de 3 colunas
 ══════════════════════════════════════════════════════════════ */
 @media (min-width: 1280px) {
-
   .container {
     padding: 0 var(--sp-8);
   }
@@ -650,7 +665,6 @@ canvas {
   }
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    7. DESKTOP XL — min-width: 1536px
 ══════════════════════════════════════════════════════════════ */
@@ -660,13 +674,11 @@ canvas {
   }
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    8. LOGO COLLAPSE — max-width: 360px
    Telas muito pequenas (Galaxy Fold, iPhone SE 1ª geração)
 ══════════════════════════════════════════════════════════════ */
 @media (max-width: 360px) {
-
   .nav-logo-text {
     display: none;
   }
@@ -695,13 +707,11 @@ canvas {
   }
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    9. NAV DRAWER — Polimento de App Nativo
    Aplica-se somente quando o drawer está ativo (mobile)
 ══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-
   /* Drawer com backdrop-filter para sensação de profundidade */
   .nav-drawer {
     backdrop-filter: blur(24px) saturate(1.5);
@@ -718,8 +728,9 @@ canvas {
     font-size: var(--fs-lg);
     padding: var(--sp-3) 0;
     border-bottom: 1px solid var(--color-border);
-    transition: color var(--transition-base),
-                padding-left var(--transition-base);
+    transition:
+      color var(--transition-base),
+      padding-left var(--transition-base);
   }
   .nav-drawer a:hover {
     padding-left: var(--sp-2);
@@ -741,7 +752,6 @@ canvas {
   }
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    10. ACESSIBILIDADE — Movimento Reduzido
 ══════════════════════════════════════════════════════════════ */
@@ -762,12 +772,10 @@ canvas {
   }
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    11. PRINT
 ══════════════════════════════════════════════════════════════ */
 @media print {
-
   #header,
   footer,
   .scroll-indicator,
