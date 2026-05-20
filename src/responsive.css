@@ -1,266 +1,419 @@
 /* ============================================================
-   PROJETO SHALOM — responsive.css
-   Media Queries Mobile-First: 320px → 1536px
+   PROJETO SHALOM — responsive.css  (Refatorado v2.0)
+   Estratégia: Mobile-First com breakpoints progressivos
+   320 → 480 → 600 → 768 → 1024 → 1280 → 1536px
+   ============================================================
+
+   ARQUITETURA:
+   1. Reset de overflow horizontal (universal)
+   2. Mobile S  — 320px  (base mínima garantida)
+   3. Mobile L  — max 480px
+   4. Form bp   — max 600px (breakpoint intermediário de formulário)
+   5. Tablet    — max 768px
+   6. Desktop M — max 1024px
+   7. Desktop L — min 1280px
+   8. Desktop XL— min 1536px
+   9. Utilitários: Logo collapse, Nav Drawer, Preferências, Print
    ============================================================ */
 
-/* ── BASE: 320px (mobile pequeno) — já coberto pelo styles.css ── */
 
-/* ── 480px — mobile padrão ── */
+/* ══════════════════════════════════════════════════════════════
+   1. PROTEÇÃO GLOBAL — evita overflow em qualquer tela
+══════════════════════════════════════════════════════════════ */
+img,
+video,
+iframe,
+svg,
+canvas {
+  max-width: 100%;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   2. MOBILE L — max-width: 480px
+   Smartphones (iPhone SE até Galaxy S23)
+══════════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
+
+  /* ── Container ── */
   .container {
     padding: 0 var(--sp-4);
   }
+
+  /* ── Ritmo vertical compacto ── */
   .section {
-    padding: var(--sp-16) 0;
+    padding: var(--sp-12) 0;
+  }
+  #fotos {
+    padding: var(--sp-12) 0;
   }
 
-  /* Hero */
+  /* ── Tipografia de seção ── */
+  .section-label {
+    font-size: 0.65rem;
+    padding: var(--sp-1) var(--sp-3);
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+    margin-bottom: var(--sp-3);
+  }
+  .section-sub {
+    font-size: var(--fs-sm);
+    margin-bottom: var(--sp-8);
+  }
+
+  /* ─────────────────────────────────────
+     NAVBAR
+  ───────────────────────────────────── */
+  #header {
+    padding: var(--sp-2) 0;
+  }
+  .nav-logo img {
+    width: 44px;
+    height: 44px;
+  }
+  .nav-logo-text strong {
+    font-size: 1rem;
+  }
+
+  /* ─────────────────────────────────────
+     HERO
+  ───────────────────────────────────── */
+  #hero {
+    min-height: 100svh;
+    padding-top: 96px;
+    padding-bottom: var(--sp-8);
+  }
+
+  .hero-eyebrow {
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-4);
+  }
+  .hero-eyebrow-year {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .hero-eyebrow-divider {
+    width: 16px;
+  }
+  .hero-eyebrow-text {
+    font-size: 0.65rem;
+  }
+
   .hero-title {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    font-size: clamp(1.75rem, 8vw, 2.2rem);
+    margin-bottom: var(--sp-4);
+    line-height: 1.15;
   }
   .hero-sub {
-    font-size: var(--fs-base);
+    font-size: var(--fs-sm);
+    margin-bottom: var(--sp-6);
+    line-height: 1.6;
   }
+
   .hero-ctas {
     flex-direction: column;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-8);
   }
   .hero-ctas .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.875rem var(--sp-5);
+    font-size: var(--fs-sm);
   }
+
   .hero-trust {
     gap: var(--sp-4);
+    padding-top: var(--sp-5);
+    flex-wrap: wrap;
   }
   .trust-divider {
     display: none;
   }
+  .trust-num {
+    font-size: var(--fs-xl);
+  }
+  .trust-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
+  }
 
-  /* Impacto */
-  .impacto-grid {
-    grid-template-columns: 1fr 1fr;
+  /* ─────────────────────────────────────
+     SOBRE
+  ───────────────────────────────────── */
+  .sobre-grid {
+    grid-template-columns: 1fr;
     gap: var(--sp-4);
+    margin-bottom: var(--sp-10);
   }
-  .impacto-num {
-    font-size: var(--fs-3xl);
+  .sobre-card {
+    padding: var(--sp-5) var(--sp-5);
+  }
+  .sobre-card h3 {
+    font-size: var(--fs-lg);
   }
 
-  /* Valores doações */
-  .valores-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* Timeline */
   .timeline {
     padding-left: var(--sp-8);
   }
-
-  /* Form row */
-  .form-row {
-    grid-template-columns: 1fr;
+  .timeline-item {
+    margin-bottom: var(--sp-6);
   }
-}
-
-/* ── 768px — tablet ── */
-@media (max-width: 768px) {
-  /* Navbar */
-  .nav-links {
-    display: none;
+  .timeline-item h4 {
+    font-size: var(--fs-sm);
   }
-  .hamburger {
-    display: flex;
-  }
-  .nav-drawer {
-    display: flex;
+  .timeline-item p {
+    font-size: var(--fs-xs);
   }
 
-  /* Hero */
-  #hero {
-    padding-top: 90px;
-  }
-  .hero-title {
-    font-size: clamp(2rem, 7vw, 3rem);
-  }
-
-  /* Sobre */
-  .sobre-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Impacto */
+  /* ─────────────────────────────────────
+     IMPACTO
+  ───────────────────────────────────── */
   .impacto-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* Projetos */
-  .projetos-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
-  /* Carrossel */
-  .carousel-slide {
-    aspect-ratio: 4/3;
-  }
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
-  }
-  .carousel-caption {
-    padding: var(--sp-6) var(--sp-5) var(--sp-4);
-  }
-  .carousel-caption h3 {
-    font-size: var(--fs-base);
-  }
-
-  /* Como ajudar */
-  .ajudar-grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto;
-  }
-
-  /* Depoimentos */
-  .depo-card {
-    padding: var(--sp-8) var(--sp-6);
-  }
-
-  /* Voluntário */
-  .voluntario-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Doações */
-  .doacoes-grid {
-    grid-template-columns: 1fr;
-  }
-  .valores-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* ── 1024px — desktop pequeno ── */
-@media (max-width: 1024px) {
-  /* Projetos: 2 colunas no tablet landscape */
-  .projetos-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* Impacto */
-  .impacto-grid {
-    gap: var(--sp-4);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
   }
   .impacto-card {
-    padding: var(--sp-6) var(--sp-4);
+    padding: var(--sp-5) var(--sp-3);
+  }
+  .impacto-num {
+    font-size: var(--fs-2xl);
+  }
+  .impacto-label {
+    font-size: 0.68rem;
+    line-height: 1.3;
   }
 
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+  /* ─────────────────────────────────────
+     PROJETOS
+  ───────────────────────────────────── */
+  .projetos-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+  .projeto-card-body {
+    padding: var(--sp-5);
+  }
+  .projeto-card-body h3 {
+    font-size: var(--fs-lg);
+  }
+
+  /* ─────────────────────────────────────
+     CARROSSEL — Correção Crítica
+     Substitui height fixo por aspect-ratio fluido
+  ───────────────────────────────────── */
+  .carousel-wrapper {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  /* Proporção 4:3 — ideal para fotos de pessoas em portrait */
+  .carousel-slide {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .carousel-slide img {
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* Setas: área de toque mínima 44×44px (WCAG 2.5.5) */
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+  .carousel-btn.prev { left: var(--sp-2); }
+  .carousel-btn.next { right: var(--sp-2); }
+
+  /* Caption compacta */
+  .carousel-caption {
+    padding: var(--sp-8) var(--sp-4) var(--sp-4);
+  }
+  .carousel-caption h3 {
+    font-size: var(--fs-sm);
+    margin-bottom: var(--sp-1);
+  }
+  .carousel-caption p {
+    font-size: 0.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Dots: área de toque expandida via padding sem mudar visual */
+  .carousel-dots {
+    gap: var(--sp-1);
+    margin-top: var(--sp-4);
+  }
+  .dot {
+    /* Área visual: 10px. Área de toque: 44px via padding */
+    padding: 17px;
+    width: auto;
+    height: auto;
+    background: transparent;
+    position: relative;
+  }
+  .dot::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border);
+    transition: all var(--transition-base);
+  }
+  .dot.active {
+    transform: none;
+    width: auto;
+    background: transparent;
+  }
+  .dot.active::after {
+    width: 22px;
+    border-radius: var(--radius-full);
+    background: var(--color-secondary);
+  }
+
+  /* ─────────────────────────────────────
+     COMO AJUDAR
+  ───────────────────────────────────── */
+  .ajudar-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+  .ajudar-card {
+    padding: var(--sp-7) var(--sp-6);
+  }
+  .ajudar-card h3 {
+    font-size: var(--fs-lg);
+  }
+
+  /* ─────────────────────────────────────
+     VOLUNTÁRIO
+  ───────────────────────────────────── */
+  .voluntario-grid {
+    grid-template-columns: 1fr;
     gap: var(--sp-8);
   }
-}
-
-/* ── 1280px — desktop padrão ── */
-@media (min-width: 1280px) {
-  .container {
-    padding: 0 var(--sp-8);
+  .voluntario-info h2 {
+    font-size: var(--fs-2xl);
   }
-  .projetos-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .voluntario-info p {
+    font-size: var(--fs-sm);
   }
-  .sobre-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .benefit-item {
+    gap: var(--sp-3);
+    align-items: flex-start;
   }
-  .impacto-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .benefit-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
   }
-  .footer-grid {
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  .benefit-item strong {
+    font-size: var(--fs-sm);
   }
-}
-
-/* ── 1536px — desktop grande ── */
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1400px;
+  .benefit-item p {
+    font-size: var(--fs-xs);
   }
-}
-
-/* ── ESPECÍFICOS POR SEÇÃO ── */
-
-/* Navbar: logo collapse em telas muito pequenas */
-@media (max-width: 380px) {
-  .nav-logo-text {
-    display: none;
+  .form-card {
+    padding: var(--sp-5);
   }
-  .nav-logo img {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-/* Hero: ajuste de altura no mobile */
-@media (max-width: 768px) {
-  #hero {
-    min-height: 100svh;
-    padding-bottom: var(--sp-12);
-  }
-}
-
-/* Carrossel: altura menor no mobile */
-@media (max-width: 480px) {
-  .carousel-slide {
-    aspect-ratio: 1/1;
-  }
-}
-
-/* Sobre: timeline ajuste */
-@media (max-width: 768px) {
-  .timeline-section {
-    margin-top: var(--sp-12);
-  }
-}
-
-/* Formulário: 2 colunas quebra para 1 */
-@media (max-width: 600px) {
   .form-row {
     grid-template-columns: 1fr;
   }
-}
+  .form-group label {
+    font-size: var(--fs-xs);
+  }
 
-/* Doações: 4 botões quebra para 2×2 no mobile */
-@media (max-width: 480px) {
+  /* ─────────────────────────────────────
+     DOAÇÕES
+  ───────────────────────────────────── */
+  .doacoes-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+  .doacoes-info p {
+    font-size: var(--fs-sm);
+    margin-bottom: var(--sp-5);
+  }
   .valores-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-2);
+  }
+  .valor-btn {
+    padding: var(--sp-3) var(--sp-2);
+    font-size: var(--fs-xs);
+  }
+  .banco-card {
+    padding: var(--sp-5);
+  }
+  .banco-row {
+    font-size: var(--fs-xs);
   }
   .pix-key-wrap {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--sp-3);
   }
   .btn-copiar {
     width: 100%;
     justify-content: center;
+    padding: var(--sp-3) var(--sp-4);
   }
-}
+  .selos {
+    gap: var(--sp-3);
+  }
+  .selo {
+    font-size: 0.65rem;
+  }
 
-/* Footer: 2 colunas colapsa para 1 no mobile */
-@media (max-width: 480px) {
+  /* ─────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────── */
+  footer {
+    padding: var(--sp-12) 0 0;
+  }
   .footer-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: var(--sp-8);
+  }
+  .footer-tagline {
+    max-width: 100%;
+    font-size: var(--fs-xs);
+  }
+  .footer-col h4 {
+    margin-bottom: var(--sp-3);
+  }
+  .footer-links {
+    gap: var(--sp-2);
+  }
+  .footer-links a {
+    font-size: var(--fs-xs);
+  }
+  .footer-contact-items {
+    gap: var(--sp-3);
+  }
+  .footer-contact-item {
+    font-size: var(--fs-xs);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--sp-3);
+    padding: var(--sp-5) 0;
+  }
+  .footer-legal {
+    flex-direction: column;
+    gap: var(--sp-2);
+    align-items: center;
   }
   .newsletter-form {
     flex-direction: column;
+    gap: var(--sp-3);
   }
   .newsletter-btn {
     width: 100%;
@@ -268,28 +421,392 @@
   }
 }
 
-/* Impacto: 2x2 no mobile pequeno */
-@media (max-width: 380px) {
-  .impacto-grid {
-    grid-template-columns: 1fr 1fr;
+
+/* ══════════════════════════════════════════════════════════════
+   3. FORMULÁRIO — max-width: 600px
+   Breakpoint intermediário exclusivo para form-row
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
   }
 }
 
-/* Print */
+
+/* ══════════════════════════════════════════════════════════════
+   4. TABLET — max-width: 768px
+   Tablets pequenos, landscape de smartphones grandes
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Container ── */
+  .container {
+    padding: 0 var(--sp-5);
+  }
+
+  /* ── Ritmo vertical ── */
+  .section {
+    padding: var(--sp-16) 0;
+  }
+  #fotos {
+    padding: var(--sp-16) 0;
+  }
+
+  /* ─────────────────────────────────────
+     NAVBAR — Oculta links, revela hambúrguer
+  ───────────────────────────────────── */
+  .nav-links  { display: none; }
+  .hamburger  { display: flex; }
+  .nav-drawer { display: flex; }
+
+  /* ─────────────────────────────────────
+     HERO
+  ───────────────────────────────────── */
+  #hero {
+    min-height: 100svh;
+    padding-top: 100px;
+    padding-bottom: var(--sp-12);
+  }
+  .hero-title {
+    font-size: clamp(2rem, 5.5vw, 2.8rem);
+  }
+  .hero-ctas {
+    flex-wrap: wrap;
+  }
+
+  /* ─────────────────────────────────────
+     SOBRE
+  ───────────────────────────────────── */
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+    margin-bottom: var(--sp-12);
+  }
+  .timeline-section {
+    margin-top: var(--sp-12);
+  }
+
+  /* ─────────────────────────────────────
+     IMPACTO
+  ───────────────────────────────────── */
+  .impacto-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+  .impacto-card {
+    padding: var(--sp-6) var(--sp-4);
+  }
+  .impacto-num {
+    font-size: var(--fs-3xl);
+  }
+
+  /* ─────────────────────────────────────
+     PROJETOS
+  ───────────────────────────────────── */
+  .projetos-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ─────────────────────────────────────
+     CARROSSEL — Tablet
+     16:9 aproveita bem a largura do tablet
+  ───────────────────────────────────── */
+  .carousel-wrapper {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+  }
+  .carousel-slide {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+  .carousel-caption {
+    padding: var(--sp-8) var(--sp-5) var(--sp-4);
+  }
+  .carousel-caption h3 {
+    font-size: var(--fs-base);
+  }
+  .carousel-caption p {
+    font-size: var(--fs-xs);
+  }
+
+  /* ─────────────────────────────────────
+     COMO AJUDAR
+  ───────────────────────────────────── */
+  .ajudar-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: var(--sp-5);
+  }
+
+  /* ─────────────────────────────────────
+     VOLUNTÁRIO
+  ───────────────────────────────────── */
+  .voluntario-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-10);
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* ─────────────────────────────────────
+     DOAÇÕES
+  ───────────────────────────────────── */
+  .doacoes-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+  .valores-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* ─────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────── */
+  .footer-grid {
+    flex-wrap: wrap;
+    gap: var(--sp-8);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--sp-4);
+  }
+  .footer-legal {
+    justify-content: center;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   5. DESKTOP M — max-width: 1024px
+   Tablets landscape, laptops pequenos
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+
+  /* ── Projetos: 2 colunas fluidas ── */
+  .projetos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: none;
+  }
+
+  /* ── Impacto: gap reduzido ── */
+  .impacto-grid {
+    gap: var(--sp-4);
+  }
+  .impacto-card {
+    padding: var(--sp-6) var(--sp-4);
+  }
+
+  /* ── Carousel mantém 16:9 ── */
+  .carousel-slide {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* ── Footer: wrap ── */
+  .footer-grid {
+    flex-wrap: wrap;
+    gap: var(--sp-8);
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   6. DESKTOP L — min-width: 1280px
+   Desktops padrão — restaura layouts de 3 colunas
+══════════════════════════════════════════════════════════════ */
+@media (min-width: 1280px) {
+
+  .container {
+    padding: 0 var(--sp-8);
+  }
+
+  .projetos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sobre-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .impacto-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Carousel volta para altura fixa no desktop grande */
+  .carousel-slide {
+    height: 480px;
+    aspect-ratio: auto;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   7. DESKTOP XL — min-width: 1536px
+══════════════════════════════════════════════════════════════ */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   8. LOGO COLLAPSE — max-width: 360px
+   Telas muito pequenas (Galaxy Fold, iPhone SE 1ª geração)
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 360px) {
+
+  .nav-logo-text {
+    display: none;
+  }
+  .nav-logo img {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Eyebrow fica só com o ano */
+  .hero-eyebrow-text,
+  .hero-eyebrow-divider {
+    display: none;
+  }
+
+  /* Título menor ainda */
+  .hero-title {
+    font-size: clamp(1.5rem, 9vw, 1.9rem);
+  }
+
+  /* Impacto: 1 coluna no mínimo absoluto */
+  .impacto-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .impacto-num {
+    font-size: var(--fs-xl);
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   9. NAV DRAWER — Polimento de App Nativo
+   Aplica-se somente quando o drawer está ativo (mobile)
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Drawer com backdrop-filter para sensação de profundidade */
+  .nav-drawer {
+    backdrop-filter: blur(24px) saturate(1.5);
+    -webkit-backdrop-filter: blur(24px) saturate(1.5);
+    padding-top: var(--sp-20);
+    padding-bottom: var(--sp-8);
+  }
+
+  /* Links: área de toque generosa (mínimo 48px) */
+  .nav-drawer a {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    font-size: var(--fs-lg);
+    padding: var(--sp-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: color var(--transition-base),
+                padding-left var(--transition-base);
+  }
+  .nav-drawer a:hover {
+    padding-left: var(--sp-2);
+    color: var(--color-primary);
+  }
+
+  /* Botão de doação no drawer */
+  .nav-drawer .btn {
+    margin-top: var(--sp-6);
+    width: 100%;
+    justify-content: center;
+    min-height: 52px;
+  }
+
+  /* Overlay escurecido com blur */
+  .nav-overlay {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   10. ACESSIBILIDADE — Movimento Reduzido
+══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Reveal: mostra tudo sem animação */
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   11. PRINT
+══════════════════════════════════════════════════════════════ */
 @media print {
+
   #header,
   footer,
   .scroll-indicator,
   .carousel-btn,
-  .depo-wrapper .carousel-btn,
+  .carousel-dots,
   .hamburger,
-  .btn-theme {
-    display: none;
+  .btn-theme,
+  .nav-overlay,
+  .nav-drawer {
+    display: none !important;
   }
+
   #hero {
     min-height: auto;
-  }
-  .section {
     padding: 2rem 0;
+  }
+
+  .section,
+  #fotos {
+    padding: 2rem 0;
+  }
+
+  .sobre-grid,
+  .projetos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .impacto-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero-bg,
+  .hero-bg-overlay {
+    display: none;
+  }
+
+  .hero-title,
+  .hero-sub,
+  .hero-ctas {
+    color: #000 !important;
   }
 }
